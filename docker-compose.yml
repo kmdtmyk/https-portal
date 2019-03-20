@@ -7,9 +7,9 @@ services:
       - '443:443'
     environment:
       restart: always
-      STAGE: 'production'
-      DOMAINS: 'localhost -> http://dockerhost:8000'
-      WEBSOCKET: 'true'
+      STAGE: ${STAGE}
+      DOMAINS: '${DOMAIN} -> http://dockerhost:${PORT}'
+      WEBSOCKET: ${WEBSOCKET}
     volumes:
       - https-portal:/var/lib/https-portal
 volumes:
