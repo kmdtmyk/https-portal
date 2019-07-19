@@ -6,11 +6,11 @@ services:
       - '80:80'
       - '443:443'
     environment:
-      restart: always
       STAGE: ${STAGE}
       DOMAINS: '${DOMAIN} -> http://dockerhost:${PORT}'
       WEBSOCKET: ${WEBSOCKET}
     volumes:
       - https-portal:/var/lib/https-portal
+    restart: always
 volumes:
   https-portal:
